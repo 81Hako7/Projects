@@ -1,0 +1,10 @@
+while robot.is_ok():
+  delta = robot.front_right_sensor() - robot.front_left_sensor()
+  onemli_nokta = 0
+  hata = onemli_nokta - delta
+  artma = 0.1
+  komut = hata*artma
+  robot.rotate(komut)
+  robot.move(2.0)
+  yavaslama = abs(komut)
+  robot.move(10 - min(8.0,yavaslama))
