@@ -1,0 +1,28 @@
+from js import robot
+import random
+#   robot.move_forward()    #ileri
+#   robot.move_backward()   #geri
+#   robot.turn_right()      #sağ
+#   robot.turn_left()       #sol
+#   robot.wall_front()      #ön sensör
+#   robot.wall_left()       #sol sensör
+#   robot.wall_right()      #sağ sensör
+
+
+
+
+while robot.is_ok():
+
+    if not robot.wall_left():
+
+        robot.turn_left()
+
+        robot.move_forward()
+
+    elif not robot.wall_front():
+
+        robot.move_forward()
+
+    elif robot.wall_left() and robot.wall_front():
+
+        robot.turn_right()
